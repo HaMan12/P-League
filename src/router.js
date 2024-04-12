@@ -6,6 +6,10 @@ import Home from './components/router/Home.vue'
 
 const routes = [
     {
+      path: '/',
+      redirect: '/home'
+    },
+    {
         path: '/home',
         name: ' Home',
         component: Home

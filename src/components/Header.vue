@@ -1,32 +1,86 @@
 <script setup>
 import { ref } from 'vue';
 const menuItems = ref([
-  { label: '賽程/比分', url: 'schedule' },
-  { label: '戰績', url: 'record' },
-  { label: '數據', subMenuItems: ['綜合排行', '特殊表現', '球員數據', '球隊數據', 'TEAM CHART'] ,url: '#'},
-  { label: '消息', subMenuItems: ['新聞總攬', '照片圖輯', '精彩影音'],url: '#'},
-  { label: '球隊', subMenuItems: ['台北富邦勇士', '新北國王', '桃園璞園領航猿','新竹御頂攻城獅','福爾摩沙夢想家','高雄17直播鋼鐵人'],
-    ItemsImg:['src/assets/img/bunbun.png','src/assets/img/kings.png','src/assets/img/monkey.png','src/assets/img/lion.png','src/assets/img/dream.png','src/assets/img/17.png']
-    , ItemsText:['簡介、主場、售票資訊'],url: '#' },
-  { label: '關於', subMenuItems: ['聯盟'],url: '#' },
-  { label: '購票', subMenuItems: ['台北富邦勇士', '新北國王', '桃園璞園領航猿','新竹御頂攻城獅','福爾摩沙夢想家','高雄17直播鋼鐵人'],url: '#' },
-  { label: '商品',url: 'commodity' }
+  { 
+    label: '賽程 / 比分', 
+    url: 'schedule' 
+  },
+  { 
+    label: '戰績', 
+    url: 'record' 
+  },
+  { 
+    label: '數據', 
+    url: '#',
+    subMenuItems: [
+      { label: '綜合排行', url: '#' },
+      { label: '特殊表現', url: '#' },
+      { label: '球員數據', url: '#' },
+      { label: '球隊數據', url: '#' },
+      { label: 'TEAM CHART', url: '#' }
+    ]
+  },
+  { 
+    label: '消息', 
+    url: '#',
+    subMenuItems: [
+      { label: '新聞總攬', url: '#' },
+      { label: '照片圖輯', url: '#' },
+      { label: '精彩影音', url: '#' }
+    ]
+  },
+  { 
+    label: '球隊',    
+    url: '#',
+    subMenuItems: [
+      { label: '台北富邦勇士', url: '#' },
+      { label: '新北國王', url: '#' },
+      { label: '桃園璞園領航猿', url: '#' },
+      { label: '新竹御頂攻城獅', url: '#' },
+      { label: '福爾摩沙夢想家', url: '#' },
+      { label: '高雄17直播鋼鐵人', url: '#' }
+    ],
+    ItemsImg: ['src/assets/img/bunbun.png', 'src/assets/img/kings.png', 'src/assets/img/monkey.png', 'src/assets/img/lion.png', 'src/assets/img/dream.png', 'src/assets/img/17.png'],
+    ItemsText: ['簡介、主場、售票資訊']
+  },
+  { 
+    label: '關於', 
+    url: '#',
+    subMenuItems: [
+      { label: '聯盟', url: '#' },
+    ]
+  },
+  { 
+    label: '購票', 
+    url: '#',
+    subMenuItems: [
+      { label: '台北富邦勇士', url: '#' },
+      { label: '新北國王', url: '#' },
+      { label: '桃園璞園領航猿', url: '#' },
+      { label: '新竹御頂攻城獅', url: '#' },
+      { label: '福爾摩沙夢想家', url: '#' },
+      { label: '高雄17直播鋼鐵人', url: '#' }
+    ]
+  },
+  { 
+    label: '商品',
+    url: 'commodity' 
+  }
 ]);
-
+//展示pc選單
 const showSubMenus = ref(Array(menuItems.value.length).fill(false));
-
 function showSubMenu(index) {
   showSubMenus.value[index] = true;
 }
-
 function hideSubMenu(index) {
   showSubMenus.value[index] = false;
 }
+// 漢堡選單開關
 const menu = ref(false);
 const toggleMeau =()=>{
   menu.value = !menu.value
 }
-
+// 漢堡選單+
 const activeIndex = ref(null);
 const toggleOn = (index) => {
   if (activeIndex.value === index) {
@@ -51,7 +105,9 @@ const toggleOn = (index) => {
     </div>
     <div class="flex mt-3 ml-3">
           <div class="mr-10">
-            <img src="../assets/icon/pleague_logo.png" alt="p+logo" class="relative w-[50px] | md:bottom-5 md:w-[80px]">
+            <a href="/Home">
+              <img src="../assets/icon/pleague_logo.png" alt="p+logo" class="relative w-[50px] | md:bottom-5 md:w-[80px]">
+           </a>
           </div>
           <div class="items-center hidden | lg:flex">
             <ul class="flex h-full items-center nav-hover">
@@ -59,12 +115,12 @@ const toggleOn = (index) => {
                 <router-link v-if="menuItem.url" :to="menuItem.url" class="nav-link">{{ menuItem.label }}</router-link>
                  <transition name="fade">
                     <ul v-show="showSubMenus[index]" class="dropdown-menu" :class="{'buyTick':menuItem.label==='購票'}">
-                      <li v-for="(subMenuItem, subIndex) in menuItem.subMenuItems" :key="subIndex"><a href="#">
+                      <li v-for="(subMenuItem, subIndex) in menuItem.subMenuItems" :key="subIndex"><a :href="subMenuItem.url">
                         <div class="flex gap-2">
                           <div class="center">
                             <img v-if="menuItem.ItemsImg && menuItem.ItemsImg[subIndex]" :src="menuItem.ItemsImg[subIndex]" alt="Image" width="36"/>
                           </div>
-                          <div :class="{'buyTick-icon':menuItem.label==='購票'}"> {{ subMenuItem }}
+                          <div :class="{'buyTick-icon':menuItem.label==='購票'}"> {{ subMenuItem.label }}
                             <p v-if="menuItem.ItemsText" class="sub-menu-text">{{ menuItem.ItemsText[0]}}</p>
                             <i class="fa-solid fa-arrow-right" v-if="menuItem.label==='購票'"></i>
                           </div>
@@ -86,21 +142,25 @@ const toggleOn = (index) => {
       </div>
       <!-- 漢堡選單 -->
       <aside class="menu" :class="{ 'menu-open': menu }">
-        <div class="flex justify-between px-4" v-on:click="menu=false">
-          <img src="../assets/icon/pleague_logo.png" alt="p+logo" width="55" class="">  
-          <div class="center text-3xl  cursor-pointer">
+        <div class="flex justify-between px-4 mb-4">          
+            <a href="/Home">
+              <img src="../assets/icon/pleague_logo.png" alt="p+logo" width="55" class=""> 
+           </a>  
+          <div class="center text-3xl  cursor-pointer" v-on:click="menu=false">
             <i class="fa-solid fa-xmark"></i> 
           </div>
         </div>
         <div>
           <ul>
             <li v-for="(menuItem, index) in menuItems" :key="index" class="border-b-2">
-              <a class="flex justify-between px-7 text-base py-6 font-bold relative" v-on:click="toggleOn(index)">{{ menuItem.label }}
+              <a :href="menuItem.url" class="px-7 py-6 block text-base font-bold relative tracking-widest" v-on:click="toggleOn(index)">{{ menuItem.label }}
                 <button type="button" class="mb-dropdown" :class="{ 'on': activeIndex === index }" v-show="menuItem.subMenuItems"></button>
-                <ul>
-                  <li><a></a></li>
-                </ul>
               </a>
+                <ul class="submenu" :class="{ 'show-mbMenu': activeIndex === index }" v-if="menuItem.subMenuItems">
+                  <li v-for="(subMenuItem, subIndex) in menuItem.subMenuItems" :key="subIndex" class="pb-3"><a :href="subMenuItem.url" class="block focus:text-[#BB986C]">
+                     {{ subMenuItem.label }}</a>
+                  </li>
+                </ul>
             </li>
           </ul>
         </div>  
@@ -267,5 +327,19 @@ const toggleOn = (index) => {
 }
 .mb-dropdown.on::after{
   transform: rotate(0deg);
+}
+.submenu{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .6s ease;
+  padding-left:40px;
+  margin-right: 25px;
+  font-weight: 700;
+}
+.show-mbMenu {
+  display: block;
+  max-height: 500px; 
+  overflow: hidden;
+  transition: max-height 2s ease-out;
 }
 </style>
