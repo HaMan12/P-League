@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref,onMounted } from 'vue';
 const menuItems = ref([
   { 
     label: '賽程 / 比分', 
@@ -89,10 +89,19 @@ const toggleOn = (index) => {
     activeIndex.value = index;
   } 
 };
+//header置頂
+const isScrolled = ref(false);
+const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      isScrolled.value = scrollTop >= 100;
+    };
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
 </script>
 
 <template>
-  <header class="xl:mx-7">
+  <header class="xl:mx-7" :class="{ 'scroll-to-top': isScrolled }">
     <div class="pt-4 pb-1 justify-end items-center mr-6 hidden | md:flex">
       <div class="center">
         <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
@@ -103,7 +112,7 @@ const toggleOn = (index) => {
         <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
     </div>
-    <div class="flex mt-3 ml-3">
+    <div class="flex mt-3 ml-3 relative z-50">
           <div class="mr-10">
             <a href="/Home">
               <img src="../assets/icon/pleague_logo.png" alt="p+logo" class="relative w-[50px] | md:bottom-5 md:w-[80px]">
@@ -139,9 +148,9 @@ const toggleOn = (index) => {
             <router-link to="/shop"><i class="fa-solid fa-cart-shopping"></i></router-link>
             <router-link to="/login" class="px-4 md:px-9 h-[46px] center"><i class="fa-regular fa-user"></i></router-link>
           </div>
-      </div>
+    </div>
       <!-- 漢堡選單 -->
-      <aside class="menu" :class="{ 'menu-open': menu }">
+    <aside class="menu" :class="{ 'menu-open': menu }">
         <div class="flex justify-between px-4 mb-4">          
             <a href="/Home">
               <img src="../assets/icon/pleague_logo.png" alt="p+logo" width="55" class=""> 
@@ -164,7 +173,7 @@ const toggleOn = (index) => {
             </li>
           </ul>
         </div>  
-      </aside>
+    </aside>
   </header>
 </template>
 
@@ -173,6 +182,14 @@ const toggleOn = (index) => {
 	@media (max-width: 768px) {
 		@content;
 	}
+}
+.scroll-to-top {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform:translate(-50%);
+    right: 0;
+    z-index: 1000;
 }
 .fade-enter-active, .fade-leave-active {
   transform: translateY(0px);
