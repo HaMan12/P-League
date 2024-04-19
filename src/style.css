@@ -6,6 +6,9 @@ html,body{
     color: #fff;
     font-weight: 300;
 }
+v-[cloak]{
+  display: none;
+}
 .center{
     display: flex;
     justify-content: center;

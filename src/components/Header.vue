@@ -101,8 +101,9 @@ const handleScroll = () => {
 </script>
 
 <template>
-  <header class="xl:mx-7" :class="{ 'scroll-to-top': isScrolled }">
-    <div class="pt-4 pb-1 justify-end items-center mr-6 hidden | md:flex">
+  <header class="xl:mx-7">
+    <div :class="{ 'scroll-to-top': isScrolled }" class="menu-fixed">
+      <div class="pt-4 pb-1 justify-end items-center mr-6 hidden | md:flex">
       <div class="center">
         <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -111,8 +112,8 @@ const handleScroll = () => {
         <a href="" class="social_icon" target="_blank"><i class="fa-solid fa-radio"></i></a>
         <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
-    </div>
-    <div class="flex mt-3 ml-3 relative z-50">
+      </div>
+      <div class="flex mt-3 ml-3 relative z-50">
           <div class="mr-10">
             <a href="/Home">
               <img src="../assets/icon/pleague_logo.png" alt="p+logo" class="relative w-[50px] | md:bottom-5 md:w-[80px]">
@@ -148,6 +149,7 @@ const handleScroll = () => {
             <router-link to="/shop"><i class="fa-solid fa-cart-shopping"></i></router-link>
             <router-link to="/login" class="px-4 md:px-9 h-[46px] center"><i class="fa-regular fa-user"></i></router-link>
           </div>
+      </div>
     </div>
       <!-- 漢堡選單 -->
     <aside class="menu" :class="{ 'menu-open': menu }">
@@ -183,13 +185,22 @@ const handleScroll = () => {
 		@content;
 	}
 }
+.menu-fixed {
+    top: -100px;
+}
 .scroll-to-top {
     position: fixed;
+    background-color: #000;
+    width: 100%;
     top: 0;
     left: 50%;
     transform:translate(-50%);
     right: 0;
     z-index: 1000;
+    transition: top 0.3s ease;
+    @include rwd-768 {
+      position: relative; 
+	  }
 }
 .fade-enter-active, .fade-leave-active {
   transform: translateY(0px);

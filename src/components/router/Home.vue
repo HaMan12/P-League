@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, reactive } from 'vue';
 import Swiper from 'swiper/bundle';
+import axios from 'axios';
 import 'swiper/css/bundle';
 onMounted(() => {
   const mySwiper = new Swiper('.mySwiper', {
@@ -31,6 +32,7 @@ onMounted(() => {
   },
     });
 });
+// 例行賽 賽程
 const gameWeek = reactive([
   {
     week: 23,
@@ -168,10 +170,17 @@ const gameWeek = reactive([
     ]
   },
 ]);
-
+// 戰機排行
+const record = reactive({ data: [] })
+// axios api
+ axios.get('')
+ .then(res =>{
+  record.data = res.data.recordData
+ })
 </script>
 
 <template>
+  <section>
     <div class="swiper gameSwiper">
     <div class="swiper-wrapper navigations">
       <div class="swiper-slide !justify-start pl-5 week"  :class="{ '-ml-8': index !== 0 }" v-for="(item,index) in gameWeek" :key="index">
@@ -215,8 +224,10 @@ const gameWeek = reactive([
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-  </div>
-  <div class="swiper mySwiper">
+    </div>
+  </section>
+  <section>
+    <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide banner-slide"><img src="../../assets/banner/banner.jpg" title="shop">
         <div class="text-sm absolute left-[20%] -bottom-8 font-black flex gap-3 | md:text-xl md:-bottom-52 md:left-[40%]">
@@ -232,7 +243,49 @@ const gameWeek = reactive([
       </div>
     </div>
     <div class="swiper-pagination"></div>
-  </div>
+    </div>
+  </section>
+  <section>
+    <div class="bg-[url('../../src/assets/img/bg-index.png')] bg-no-repeat">
+      <div class="max-w-1280 mx-auto py-20 lg:py-32">
+        <h2 class="text-center text-white font-bold text-base | md:text-2xl">STANDINGS & RANKINGS
+          <span class="text-base pl-2">/ 例行賽 /</span>
+        </h2>
+        <h5 class="text-center font-bold py-5 text-sm">戰績排行</h5>
+        <div class="px-2">
+           <table class="game-table">
+             <thead>
+               <tr class="border-b border-[#4b4b4b] text-left py-5 h-11 text-sm | md:text-base">
+                 <th width="7%"></th>
+                 <th width="25%">隊伍TEAM</th>
+                 <th width="15%">已賽 GP</th>
+                 <th width="10%">勝 W</th>
+                 <th width="10%">敗 L</th>
+                 <th width="10%">勝率</th>
+                 <th width="10%">勝差</th>
+                 <th width="10%">連勝連敗</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr v-for="(item,index) in record.data" :key='index' class="border-b border-[#4b4b4b] h-[70px] font-bold  text-sm | md:text-base">
+                 <td class="text-center">{{ index+1 }} </td>
+                 <td class="text-[#BB986C] cursor-pointer flex items-center h-[70px]">
+                   <img :src="item.imageUrl" width="30" class="mr-1">
+                   {{ item.team }}
+                 </td>
+                 <td class="pl-4">{{ item.game }}</td>
+                 <td class="pl-2">{{ item.win }}</td>
+                 <td>{{ item.lose }}</td>
+                 <td>{{ (item.win / item.game * 100).toFixed(1) }}%</td>
+                 <td class="pl-3">{{ item.wintolose }}</td>
+                 <td class="pl-2 | md:pl-4">{{ item.wal }}</td>
+               </tr>
+             </tbody>
+         </table>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
@@ -274,7 +327,7 @@ const gameWeek = reactive([
     display: none;
     @include rwd-768 {
       display: flex; 
-	}
+	  }
   }
   .gameSwiper:hover .swiper-button-next,
   .gameSwiper:hover .swiper-button-prev {
@@ -345,5 +398,11 @@ const gameWeek = reactive([
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+}
+.game-table{
+  border-top: 10px solid #4b4b4b;
+  border-bottom:10px solid #4b4b4b;
+  width: 100%;
+  background-color: #1b1b1b;
 }
 </style>
