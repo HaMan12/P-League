@@ -1,8 +1,9 @@
 <script setup>
-import { onMounted, reactive } from 'vue';
+import { onMounted, reactive , ref } from 'vue';
 import Swiper from 'swiper/bundle';
 import axios from 'axios';
 import 'swiper/css/bundle';
+
 onMounted(() => {
   const mySwiper = new Swiper('.mySwiper', {
     loop:true,
@@ -170,13 +171,19 @@ const gameWeek = reactive([
     ]
   },
 ]);
+// axios api
 // 戰機排行
 const record = reactive({ data: [] })
-// axios api
- axios.get('')
- .then(res =>{
-  record.data = res.data.recordData
- })
+const loading = ref(true)
+onMounted(async () => {
+  try {
+    const response = await axios.get('https://api-nine-brown.vercel.app/api/record');
+    record.data = response.data;
+    loading.value = false;
+  } catch (error) {
+    console.log('錯誤訊息', error);
+  }
+});
 </script>
 
 <template>
@@ -247,7 +254,7 @@ const record = reactive({ data: [] })
   </section>
   <section>
     <div class="bg-[url('../../src/assets/img/bg-index.png')] bg-no-repeat">
-      <div class="max-w-1280 mx-auto py-20 lg:py-32">
+      <div class="max-w-1280 mx-auto pt-20 lg:py-32">
         <h2 class="text-center text-white font-bold text-base | md:text-2xl">STANDINGS & RANKINGS
           <span class="text-base pl-2">/ 例行賽 /</span>
         </h2>
@@ -267,7 +274,8 @@ const record = reactive({ data: [] })
                </tr>
              </thead>
              <tbody>
-               <tr v-for="(item,index) in record.data" :key='index' class="border-b border-[#4b4b4b] h-[70px] font-bold  text-sm | md:text-base">
+               <tr class="table-row" v-if="loading"><td class="table-cell text-center h-[70px]" colspan="8">資料loading中</td></tr>
+               <tr v-else v-for="(item,index) in record.data" :key='index' class="border-b border-[#4b4b4b] h-[70px] font-bold  text-sm | md:text-base">
                  <td class="text-center">{{ index+1 }} </td>
                  <td class="text-[#BB986C] cursor-pointer flex items-center h-[70px]">
                    <img :src="item.imageUrl" width="30" class="mr-1">

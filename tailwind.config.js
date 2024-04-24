@@ -9,6 +9,10 @@ export default {
       maxWidth: {
         '1280': '1280px'
       },
+      colors:{
+        mainTitle: '#373f50',
+        bottomBorder: '#ccc', 
+      },
     },
   },
   plugins: [],

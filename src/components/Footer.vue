@@ -22,7 +22,8 @@ import { ref,onMounted } from 'vue';
 <template>
     <footer class="relative">
         <div class="max-w-1280 mx-auto text-center py-10">
-            <a href="mailto:bdbh902@gmail.com" class="underline tracking-wider">
+          <span>如有侵權疑慮，請寄信給我</span>
+            <a href="mailto:bdbh902@gmail.com" class="underline tracking-wider pl-2">
                  <i class="fa-solid fa-envelope"></i>
                  bdbh902@gmail.com</a>
             <p class="pt-3 tracking-widest">版型參考P+網站，此頁僅做練習作品使用</p>
