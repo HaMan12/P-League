@@ -105,12 +105,12 @@ const handleScroll = () => {
     <div :class="{ 'scroll-to-top': isScrolled }" class="menu-fixed">
       <div class="pt-4 pb-1 justify-end items-center mr-6 hidden | md:flex">
       <div class="center">
-        <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-        <a href="" class="social_icon" target="_blank"><i class="fa-solid fa-radio"></i></a>
-        <a href="" class="social_icon" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/PLEAGUE.official" class="social_icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/p.league.official/?fbclid=IwAR0N6N2QygJvYA53GmHf6D9aPG4gpik4bIfUot5WNij0rWmOkJe8EiqaPBk" class="social_icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/c/PLEAGUEofficial/featured" class="social_icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://twitter.com/P_LEAGUE_EN" class="social_icon" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9vcGVuLmZpcnN0b3J5Lm1lL3Jzcy91c2VyL2NrdXRmeTBycDk0YWkwOTQya3pod205a3U=" class="social_icon" target="_blank"><i class="fa-solid fa-radio"></i></a>
+        <a href="https://www.linkedin.com/company/p-league/" class="social_icon" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
       </div>
       <div class="flex mt-3 ml-3 relative z-50">

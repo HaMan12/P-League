@@ -1,10 +1,18 @@
 <script setup>
-import { onMounted, reactive , ref } from 'vue';
+import { onMounted, reactive, onBeforeMount } from 'vue';
 import Swiper from 'swiper/bundle';
-import axios from 'axios';
+import { useRecordStore } from '../../store/record.js';
 import 'swiper/css/bundle';
+import Modals from '../modal.vue';
+import emitter from '../../mitt/mitt.js';
 
-onMounted(() => {
+// 戰機排行
+const { loading, record, fetchRecord } = useRecordStore();
+onMounted(async ()=>{
+  await fetchRecord();
+})
+
+onBeforeMount(() => {
   const mySwiper = new Swiper('.mySwiper', {
     loop:true,
     slidesPerView: 1,
@@ -171,19 +179,11 @@ const gameWeek = reactive([
     ]
   },
 ]);
-// axios api
-// 戰機排行
-const record = reactive({ data: [] })
-const loading = ref(true)
-onMounted(async () => {
-  try {
-    const response = await axios.get('https://api-nine-brown.vercel.app/api/record');
-    record.data = response.data;
-    loading.value = false;
-  } catch (error) {
-    console.log('錯誤訊息', error);
-  }
-});
+
+const sendData = () => {
+  const data = { message: '這是一個資料示例', value: 42 };
+  emitter.emit('openModal', data);
+}
 </script>
 
 <template>
@@ -275,7 +275,7 @@ onMounted(async () => {
              </thead>
              <tbody>
                <tr class="table-row" v-if="loading"><td class="table-cell text-center h-[70px]" colspan="8">資料loading中</td></tr>
-               <tr v-else v-for="(item,index) in record.data" :key='index' class="border-b border-[#4b4b4b] h-[70px] font-bold  text-sm | md:text-base">
+               <tr v-else v-for="(item,index) in record" :key='index' class="border-b border-[#4b4b4b] h-[70px] font-bold  text-sm | md:text-base">
                  <td class="text-center">{{ index+1 }} </td>
                  <td class="text-[#BB986C] cursor-pointer flex items-center h-[70px]">
                    <img :src="item.imageUrl" width="30" class="mr-1">
@@ -414,3 +414,4 @@ onMounted(async () => {
   background-color: #1b1b1b;
 }
 </style>
+../../store/record.js

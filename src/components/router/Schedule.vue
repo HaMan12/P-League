@@ -1,10 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive, onMounted} from 'vue'
+
 const chose = ref('willStart');
 const handleClick = (option) => {
   chose.value = option 
 }
-const loading = ref(true)
 </script>
 
 <template>
@@ -12,15 +12,15 @@ const loading = ref(true)
         <h3 class="bg-[#24292D] text-2xl text-center text-white py-3 | lg:text-[40px] lg:py-10">PLG SCHEDULE</h3>
     </section>
     <section>
-        <div class="max-w-1280 mx-auto mt-10 lg:mt-20">
-            <h4 class="text-center font-bold text-lg pb-4">2023-24</h4>
-            <div class="flex">
+        <div class="max-w-1280 mx-auto mt-5 lg:mt-20">
+            <h4 class="text-center font-bold text-lg pb-5">2023-24</h4>
+            <div class="flex mx-2 | md:mx-0">
                 <a class="gameBtn mr-2" :class="{'afocus':chose==='willStart'}" v-on:click="handleClick('willStart')">即將開賽 (27)</a>
-                <div class="w-[1px] bg-white h-[30px] mt-1"></div>
+                <div class="w-[1px] bg-white mt-2 | md:mt-1"></div>
                 <a class="gameBtn mx-2" :class="{'afocus':chose==='completed'}" v-on:click="handleClick('completed')">完賽 (93)</a>
-                <div class="w-[1px] bg-white h-[30px] mt-1"></div>
+                <div class="w-[1px] bg-white mt-2 | md:mt-1"></div>
                 <a class="gameBtn mx-2" :class="{'afocus':chose==='playoffs'}" v-on:click="handleClick('playoffs')">季後賽</a>
-                <div class="w-[1px] bg-white h-[30px] mt-1"></div>
+                <div class="w-[1px] bg-white mt-2 | md:mt-1"></div>
                 <a class="gameBtn ml-2" :class="{'afocus':chose==='championship'}" v-on:click="handleClick('championship')">總冠軍賽</a>
             </div>
             <!-- 即將開賽 -->
@@ -73,7 +73,8 @@ const loading = ref(true)
             <!-- 完賽 -->            
             <transition-group name="list" >
                 <div class="mt-2 bg-white" v-if="chose==='completed'">
-                <div class="flex items-center flex-wrap px-4 py-3 text-mainTitle font-bold border border-bottomBorder" v-for="i in 5">
+                <div class="flex items-center flex-wrap px-4 py-3 text-mainTitle font-bold border border-bottomBorder"
+                 v-for="i in 2">
                     <div class="flex justify-center text-center w-full gap-1 text-sm | md:w-1/12 md:flex-col md:gap-0">
                         <h5 class="lg:text-base">04/27</h5>
                         <h5 class="mb-1">(六)</h5>
@@ -215,13 +216,32 @@ const loading = ref(true)
     </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@mixin rwd-768 {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+@mixin rwd-420 {
+	@media (max-width: 420px) {
+		@content;
+	}
+}
  .gameBtn{
     display: inline-block;
     padding: .425em 1em;
     font-weight: 800;
     cursor: pointer;
     color: #aaa;
+    @include rwd-768 {
+        padding: .425em .5em;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+	  }
+      @include rwd-420 {
+        padding: .2em .1em;
+	  }
  }
  .afocus{
     background-color: #BB986C;
