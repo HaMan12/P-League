@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, reactive, onBeforeMount } from 'vue';
+import { onMounted, reactive, } from 'vue';
 import Swiper from 'swiper/bundle';
 import { useRecordStore } from '../../store/record.js';
 import 'swiper/css/bundle';
@@ -12,7 +12,7 @@ onMounted(async ()=>{
   await fetchRecord();
 })
 
-onBeforeMount(() => {
+onMounted(() => {
   const mySwiper = new Swiper('.mySwiper', {
     loop:true,
     slidesPerView: 1,
@@ -414,4 +414,3 @@ const sendData = () => {
   background-color: #1b1b1b;
 }
 </style>
-../../store/record.js

@@ -13,6 +13,9 @@ export default {
         mainTitle: '#373f50',
         bottomBorder: '#ccc', 
       },
+      fontFamily: {
+        'title': ['worker', 'serif']
+      }
     },
   },
   plugins: [],

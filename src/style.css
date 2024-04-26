@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 統一標題樣式 */
+.title-style{
+  @apply bg-[#24292D] text-2xl text-center text-white py-3 font-title font-extrabold tracking-wider lg:text-[40px] lg:py-10
+}
+
 [v-cloak]{
   display: none;
 }
@@ -28,17 +33,16 @@ html,body{
   opacity: 0;
   transform: translateX(30px);
 }
-
 .swiper-pagination-clickable .swiper-pagination-bullet{
-    background-color: azure;
-    width: 6px;
-    height: 6px;
-    transition: all .3s;
-  }
+  background-color: azure;
+  width: 6px;
+  height: 6px;
+  transition: all .3s;
+}
 
-  .swiper-pagination-bullet.swiper-pagination-bullet-active{
-    width:1.25rem;
-    height: 6px;
-    border-radius: 10px;
-    background-color: #BB986C;
-  }
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  width:1.25rem;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #BB986C;
+}

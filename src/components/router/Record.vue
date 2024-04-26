@@ -10,7 +10,7 @@ onMounted(async ()=>{
 
 <template>
     <section>
-        <h3 class="bg-[#24292D] text-2xl text-center text-white py-3 | lg:text-[40px] lg:py-10">STANDINGS</h3>
+        <h3 class="title-style">STANDINGS</h3>
     </section>
     <section>
         <div class="max-w-1280 mx-auto mt-10 lg:mt-20">
