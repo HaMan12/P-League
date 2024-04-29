@@ -27,11 +27,17 @@ const router = createRouter({
       name: 'Schedule',
       component: () => import('./components/router/Schedule.vue')
     },
-    // 數據
+    // 數據(綜合排行)
     {
       path: '/raking',
       name: 'raking',
-      component: () => import('./components/router/Raking.vue')
+      component: () => import('./components/router/Raking.vue'),
+    },
+    // 數據(特殊表現)
+    {
+      path: '/performance',
+      name: 'performance',
+      component: () => import('./components/router/performance.vue'),
     },
     // 商品
     {

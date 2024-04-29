@@ -14,7 +14,7 @@ const menuItems = ref([
     url: '#',
     subMenuItems: [
       { label: '綜合排行', url: '/raking' },
-      { label: '特殊表現', url: '#' },
+      { label: '特殊表現', url: '/performance' },
       { label: '球員數據', url: '#' },
       { label: '球隊數據', url: '#' },
       { label: 'TEAM CHART', url: '#' }

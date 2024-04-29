@@ -12,6 +12,7 @@ export default {
       colors:{
         mainTitle: '#373f50',
         bottomBorder: '#ccc', 
+        active:'#BB986C',
       },
       fontFamily: {
         'title': ['worker', 'serif']
