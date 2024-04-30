@@ -18,11 +18,7 @@
 	}
 }
 .main-content {
-    min-height: calc(100vh - 140px);
-    padding-bottom:140px;
-    @include rwd-768 {
-        min-height: calc(100vh - 70px);
-        padding-bottom:70px;
-	  }
+    min-height: calc(100vh - 35px);
+    padding-bottom:35px;
 }
 </style>

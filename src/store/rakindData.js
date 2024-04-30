@@ -13,16 +13,12 @@ export const useRakindStore = defineStore({
         Url: '/performance'
       },
       {
-        title: '球員數據',
-        Url: ''
-      },
-      {
         title: '球隊數據',
-        Url: ''
+        Url: '/team'
       },
       {
         title: 'TEAM CHART',
-        Url: ''
+        Url: '/chart'
       },
     ],
   }),
