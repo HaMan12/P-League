@@ -14,6 +14,7 @@ export default {
         mainTitle: '#373f50',
         bottomBorder: '#ccc', 
         active:'#BB986C',
+        red:'red'
       },
       fontFamily: {
         'title': ['worker', 'serif']

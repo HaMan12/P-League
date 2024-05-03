@@ -8,7 +8,7 @@
         <h3 class="title-style">P.LEAGUE+ SHOP</h3>
     </section>
     <section class="py-0 | md:py-5">
-
+       
     </section>
 </template>
 
