@@ -57,6 +57,13 @@ const router = createRouter({
       name: 'commodity',
       component: () => import('./components/router/Commodity.vue')
     },
+    // 商品細項
+    {
+      path: '/ProductDetail/:productId',
+      name: 'ProductDetail',
+      component: () => import('./components/router/ProductDetail.vue'),
+      props:true
+    },
     // 搜尋
     {
       path: '/search',
