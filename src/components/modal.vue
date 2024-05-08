@@ -6,21 +6,34 @@ const options =ref({});
 onMounted(() => {
     emitter.on('openModal', (data) => {
     options.value = data;
+    console.log(options.value.isOpen)
   });
 })
-
+const closeModal =()=>{
+  options.value.isOpen =  !options.value.isOpen
+}
 </script>
 
 <template v-cloak >
     <Transition>
-        <div class="modal-outer" v-if="options===''">
+        <div class="modal-outer" v-if="options.isOpen">
             <div class="modal">
                 <div class="modal-header">
-                    <button class="absolute right-3 top-1/2 translate-y-[-50%]" v-on:click="closeModal('')">
+                  <h3 class="text-center text-2xl font-bold">{{ options.title }}</h3>
+                    <button class="absolute right-5 top-1/2 translate-y-[-50%]" v-on:click="closeModal()">
                         <img src="../assets/icon/iconClose.svg" alt="">
                     </button>
                 </div>
                 <div class="modal-body">
+                   <div class="p-5 text-black text-lg font-medium center !justify-between gap-2">
+                      <div>
+                        <p>商品: {{ options.message.name }}</p>
+                        <p class="mt-1">數量: {{ options.count }}</p>
+                      </div>
+                      <div>
+                        <button >加入購物車</button>
+                      </div>
+                   </div>
                 </div>
             </div>
         </div>
@@ -80,6 +93,7 @@ onMounted(() => {
 } 
 
 .modal-header{
+  position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;

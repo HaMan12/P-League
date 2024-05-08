@@ -55,11 +55,11 @@ const router = createRouter({
     {
       path: '/commodity',
       name: 'commodity',
-      component: () => import('./components/router/Commodity.vue')
+      component: () => import('./components/router/Commodity.vue'),
     },
     // 商品細項
     {
-      path: '/ProductDetail/:productId',
+      path: '/:productId',
       name: 'ProductDetail',
       component: () => import('./components/router/ProductDetail.vue'),
       props:true
