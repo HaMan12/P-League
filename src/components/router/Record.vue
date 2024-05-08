@@ -3,7 +3,7 @@ import { ref , onMounted} from 'vue'
 import { useRecordStore } from '../../store/record.js';
 
 const { loading, record, fetchRecord } = useRecordStore();
-onMounted(async ()=>{
+onMounted(()=>{
    fetchRecord();
 })
 </script>

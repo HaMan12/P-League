@@ -14,10 +14,9 @@ const menuItems = ref([
     url: '#',
     subMenuItems: [
       { label: '綜合排行', url: '/raking' },
-      { label: '特殊表現', url: '#' },
-      { label: '球員數據', url: '#' },
-      { label: '球隊數據', url: '#' },
-      { label: 'TEAM CHART', url: '#' }
+      { label: '特殊表現', url: '/performance' },
+      { label: '球隊數據', url: '/team' },
+      { label: 'TEAM CHART', url: '/chart' }
     ]
   },
   { 
@@ -54,12 +53,12 @@ const menuItems = ref([
     label: '購票', 
     url: '#',
     subMenuItems: [
-      { label: '台北富邦勇士', url: '#' },
-      { label: '新北國王', url: '#' },
-      { label: '桃園璞園領航猿', url: '#' },
-      { label: '新竹御頂攻城獅', url: '#' },
-      { label: '福爾摩沙夢想家', url: '#' },
-      { label: '高雄17直播鋼鐵人', url: '#' }
+      { label: '台北富邦勇士', url: 'https://tix.fubonbraves.com/UTK0101_' },
+      { label: '新北國王', url: 'https://newtaipeikings.kktix.cc/events/jry6t35jtui?fbclid=IwAR3t44PJmnIJusVYXJcIK3hpGmicwYwF8qT6v0f-gywAGgDy-zZkth7JNLk' },
+      { label: '桃園璞園領航猿', url: 'https://ticket.ibon.com.tw/ActivityInfo/Details/38020' },
+      { label: '新竹御頂攻城獅', url: 'https://tixcraft.com/activity/detail/23_lioneers_p' },
+      { label: '福爾摩沙夢想家', url: 'https://ticket.ibon.com.tw/Index/Sport' },
+      { label: '高雄17直播鋼鐵人', url: 'https://ticket.ibon.com.tw/ActivityInfo/Details/38003' }
     ]
   },
   { 

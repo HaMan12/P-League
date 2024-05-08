@@ -33,6 +33,9 @@ html,body{
   opacity: 0;
   transform: translateX(30px);
 }
+.list-leave-to {
+  opacity: 0;
+}
 .swiper-pagination-clickable .swiper-pagination-bullet{
   background-color: azure;
   width: 6px;

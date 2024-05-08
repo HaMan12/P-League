@@ -3,8 +3,6 @@ import { onMounted, reactive, } from 'vue';
 import Swiper from 'swiper/bundle';
 import { useRecordStore } from '../../store/record.js';
 import 'swiper/css/bundle';
-import Modals from '../modal.vue';
-import emitter from '../../mitt/mitt.js';
 
 // 戰機排行
 const { loading, record, fetchRecord } = useRecordStore();
@@ -180,10 +178,6 @@ const gameWeek = reactive([
   },
 ]);
 
-const sendData = () => {
-  const data = { message: '這是一個資料示例', value: 42 };
-  emitter.emit('openModal', data);
-}
 </script>
 
 <template>
