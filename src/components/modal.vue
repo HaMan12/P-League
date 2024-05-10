@@ -109,7 +109,7 @@ const sendCarData = () => {
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
-  color: rgb(80 80 80 / var(--tw-text-opacity));
+  color: rgb(80, 80, 80, 0.75);
 }
 
 .modal-body{
