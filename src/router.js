@@ -51,6 +51,12 @@ const router = createRouter({
       name: 'chart',
       component: () => import('./components/router/Chart.vue'),
     },
+    // 關於
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('./components/router/About.vue'),
+    },
     // 商品
     {
       path: '/commodity',
@@ -63,6 +69,12 @@ const router = createRouter({
       name: 'ProductDetail',
       component: () => import('./components/router/ProductDetail.vue'),
       props:true
+    },
+    // 購物車
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('./components/router/Cart.vue'),
     },
     // 搜尋
     {

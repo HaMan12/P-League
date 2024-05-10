@@ -30,9 +30,15 @@ const goBack = ()=>{
 }
 //開啟modal 
 const sendData = () => {
-  const data = { message: rawshopDetail, isOpen: true , title:'確認加入購物車', count:count};
+  if(size.value == 0 && rawshopDetail.isTshirt){
+    alert('尚未選擇尺寸')
+    return
+  }
+  const data = { message: rawshopDetail, isOpen: true , title:'確認加入購物車', count:count , size:size ,isProduct:true};
   emitter.emit('openModal', data);
 }
+// size
+const size = ref(0);
 </script>
 
 <template>
@@ -40,16 +46,16 @@ const sendData = () => {
   <section class="bg-white">
     <div class="max-w-1280 mx-auto flex flex-wrap py-5 | md:py-10">
       <div class="w-full | md:w-1/2">
-        <img :src="rawshopDetail.imgUrl" width="600">
+        <img v-if="rawshopDetail" :src="rawshopDetail.imgUrl" width="600">
       </div>
       <div class="text-black w-full p-5 | md:w-1/2 md:p-16">
         <div class="text-center font-bold | md:text-left">
-          <h2 class="text-lg">{{ rawshopDetail.name }}</h2>
-          <h3 class="text-3xl py-2 | md:py-5">NTD {{ rawshopDetail.NTD }}</h3>
+          <h2 class="text-lg" v-if="rawshopDetail">{{ rawshopDetail.name }}</h2>
+          <h3 class="text-3xl py-2 | md:py-5" v-if="rawshopDetail">NTD {{ rawshopDetail.NTD }}</h3>
         </div>
-        <p class="font-medium" v-html="rawshopDetail.content"></p>
+        <p class="font-medium" v-if="rawshopDetail" v-html="rawshopDetail.content"></p>
         <!-- 尺寸 -->
-        <select name="size" class="count-input w-full mt-2 h-[46px]" v-if="rawshopDetail.isTshirt">
+        <select name="size" class="count-input w-full mt-2 h-[46px]" v-if="rawshopDetail && rawshopDetail.isTshirt" v-model="size">
           <option value="0">選擇尺寸</option>
           <option value="S">S</option>
           <option value="M">M</option>
@@ -58,7 +64,7 @@ const sendData = () => {
         </select>
         <!-- 數量 -->
         <div class="mt-2 mb-3 w-full flex">
-          <input type="number"v-model="count" min="1" max="999" class="flex-1 count-input">
+          <input type="number" v-model="count" min="1" max="999" class="flex-1 count-input">
           <div class="flex">      
             <button type="button" class="count-btn" @click="add()">+</button>
             <button type="button" class="count-btn" @click="minus()">-</button>

@@ -1,16 +1,22 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref ,toRaw} from 'vue';
 import  emitter from '../mitt/mitt.js';
+import router from '../router.js';
 
 const options =ref({});
 onMounted(() => {
     emitter.on('openModal', (data) => {
     options.value = data;
-    console.log(options.value.isOpen)
   });
 })
 const closeModal =()=>{
   options.value.isOpen =  !options.value.isOpen
+}
+//傳到購物車 
+const sendCarData = () => {
+  const data = options.value;
+  emitter.emit('sendCarDatas', data);
+  router.push({ name: 'cart' });
 }
 </script>
 
@@ -25,13 +31,16 @@ const closeModal =()=>{
                     </button>
                 </div>
                 <div class="modal-body">
-                   <div class="p-5 text-black text-lg font-medium center !justify-between gap-2">
+                   <div class="flex-col p-5 text-black text-lg font-medium center !justify-between gap-5 | md:flex-row" v-if="options.isProduct">
                       <div>
                         <p>商品: {{ options.message.name }}</p>
+                        <p v-show="options.message.isTshirt">尺寸: {{ options.size }}</p>
                         <p class="mt-1">數量: {{ options.count }}</p>
                       </div>
                       <div>
-                        <button >加入購物車</button>
+                         <button class="addCar" @click="sendCarData()">
+                            加入購物車
+                         </button>
                       </div>
                    </div>
                 </div>
@@ -108,4 +117,16 @@ const closeModal =()=>{
   background-color: rgb(242 242 242 / var(--tw-bg-opacity));
   padding: 1.25rem;
 }
+.addCar{
+  display: block;
+  background-color: #BB986C;
+  color: #fff;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
+    &:hover{
+      background-color: #8E6F4D;
+    }
+  }
 </style>

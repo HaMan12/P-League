@@ -1,12 +1,12 @@
 <script setup>
+import { onMounted, ref , toRaw , nextTick} from 'vue';
+import emitter from '../../mitt/mitt.js';
 
 
 </script>
 
 <template>
-    <section class="py-0 | md:py-5">
-
-    </section>
+    
 </template>
 
 <style scoped lang="scss">

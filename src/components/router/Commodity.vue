@@ -86,7 +86,7 @@ const selectlike = (idx) =>{
                             <button class="w-8 h-8 rounded-full bg-[#f3f5f9] hover:text-red" @click="selectlike(index)">
                                 <i class="fa-regular fa-heart"></i>
                             </button>
-                            <div v-if="product.isLiked" class="absolute top-10 -left-3 w-[60px] z-20 text-sm text-red">收藏成功</div>
+                            <div v-if="product.isLiked" class="absolute top-10 -left-5 w-[60px] z-20 text-sm text-red | md:-left-3">收藏成功</div>
                         </div>
                     </div>
                     <div class="text-center text-white bg-black mx-3 my-5 opacity-0">

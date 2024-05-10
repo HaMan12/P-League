@@ -46,7 +46,7 @@ const menuItems = ref([
     label: '關於', 
     url: '#',
     subMenuItems: [
-      { label: '聯盟', url: '#' },
+      { label: '聯盟', url: 'about' },
     ]
   },
   { 
