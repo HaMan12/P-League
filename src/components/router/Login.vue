@@ -28,17 +28,21 @@ const mixinSubmit = (value, bool) => {
     };
 const submit = ()=>{
 	mixinSubmit(username.value, isUsername);
-    mixinSubmit(password.value, isPassword);
+	if (password.value === null || password.value === '') {
+        isPassword.value = true;
+      } else {
+        isPassword.value = false;
+      }
 }
 watch(username, (newValue, oldValue) =>{
-	if (newValue !== null && !isNaN(newValue)) {
-        isUsername.value = false; 
-      }
+	if (newValue !== null && isNaN(newValue)) { 
+    	isUsername.value = true;
+  	} else {
+    	isUsername.value = false;
+  	}
 })
 watch(password, (newValue, oldValue) =>{
-	if (newValue !== null && !isNaN(newValue)) {
-        isPassword.value = false; 
-      }
+	mixinSubmit(newValue, isPassword);
 })
 </script>
 
@@ -65,8 +69,8 @@ watch(password, (newValue, oldValue) =>{
 								</button>
 							</div>
 						</div>
-						<div class="mt-16 bg-black py-3 ease-in duration-300 hover:opacity-80">
-							<button type="button" class="w-full text-center block" @click="submit()">登入</button>
+						<div class="mt-16 bg-black ease-in duration-300 hover:opacity-80">
+							<button type="button" class="w-full py-3 text-center block" @click="submit()">登入</button>
 						</div>
 					</form>
 				</div>
