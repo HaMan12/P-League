@@ -23,9 +23,9 @@ const menuItems = ref([
     label: '消息', 
     url: '#',
     subMenuItems: [
-      { label: '新聞總攬', url: '#' },
-      { label: '照片圖輯', url: '#' },
-      { label: '精彩影音', url: '#' }
+      { label: '新聞總攬', url: '/news' },
+      { label: '照片圖輯', url: '/album' },
+      { label: '精彩影音', url: '/video' }
     ]
   },
   { 
@@ -145,7 +145,7 @@ const handleScroll = () => {
               <i class="fa-solid fa-bars"></i>
             </div>
             <router-link to="/search"><i class="fa-solid fa-magnifying-glass"></i></router-link>
-            <router-link to="/shop"><i class="fa-solid fa-cart-shopping"></i></router-link>
+            <router-link to="/cart"><i class="fa-solid fa-cart-shopping"></i></router-link>
             <router-link to="/login" class="px-4 md:px-9 h-[46px] center"><i class="fa-regular fa-user"></i></router-link>
           </div>
       </div>

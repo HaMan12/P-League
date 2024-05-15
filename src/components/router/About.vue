@@ -3,7 +3,7 @@
 
 <template>
     <h3 class="title-style">關於P-League</h3>
-    <section class="min-h-[800px] bg-no-repeat bg-cover center" style="background-image: url(src/assets/banner/bg_about.png);">
+    <section class="min-h-[800px] bg-no-repeat bg-contain center" style="background-image: url(src/assets/banner/bg_about.png);">
         <div class="max-w-[1000px] w-full mx-auto text-white py-10 px-5 text-center bg-black | md:text-left">
             <h5 class="font-black tracking-widest text-xl text-center | md:text-3xl">-----------<span class="px-3">關於</span>-----------</h5>
             <h2 class="worker_black my-5 text-4xl | md:text-6xl">P. LEAGUE+</h2>

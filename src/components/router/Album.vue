@@ -1,14 +1,11 @@
 <script setup>
-
+import { ref , watch  } from 'vue'
 
 </script>
 
 <template>
     <section>
-        <h3 class="title-style">P.LEAGUE+ SHOP</h3>
-    </section>
-    <section class="py-0 | md:py-5">
-       
+        <h3 class="title-style"></h3>
     </section>
 </template>
 
@@ -17,11 +14,5 @@
 	@media (max-width: 768px) {
 		@content;
 	}
-}
-.main-content {
-
-    @include rwd-768 {
-
-	  }
 }
 </style>

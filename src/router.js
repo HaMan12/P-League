@@ -57,6 +57,24 @@ const router = createRouter({
       name: 'about',
       component: () => import('./components/router/About.vue'),
     },
+    // 消息---新聞總攬
+    {
+      path: '/news',
+      name: 'news',
+      component: () => import('./components/router/News.vue')
+    },
+    // 消息---照片圖輯
+    {
+      path: '/album',
+      name: 'album',
+      component: () => import('./components/router/Album.vue')
+    },
+    // 消息---影音紀錄
+    {
+      path: '/video',
+      name: 'video',
+      component: () => import('./components/router/Video.vue')
+    },
     // 商品
     {
       path: '/commodity',
@@ -81,12 +99,6 @@ const router = createRouter({
       path: '/search',
       name: 'search',
       component: () => import('./components/router/Search.vue')
-    },
-    // 商城
-    {
-      path: '/shop',
-      name: 'shop',
-      component: () => import('./components/router/Shop.vue')
     },
     // 登入
     {
