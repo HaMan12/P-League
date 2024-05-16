@@ -32,12 +32,12 @@ const menuItems = ref([
     label: '球隊',    
     url: '#',
     subMenuItems: [
-      { label: '台北富邦勇士', url: '#' },
-      { label: '新北國王', url: '#' },
-      { label: '桃園璞園領航猿', url: '#' },
-      { label: '新竹御頂攻城獅', url: '#' },
-      { label: '福爾摩沙夢想家', url: '#' },
-      { label: '高雄17直播鋼鐵人', url: '#' }
+      { label: '台北富邦勇士', url: '/fubonbraves' },
+      { label: '新北國王', url: '/newtaipeikings' },
+      { label: '桃園璞園領航猿', url: '/pilots' },
+      { label: '新竹御頂攻城獅', url: '/lioneers' },
+      { label: '福爾摩沙夢想家', url: '/formosadreamers' },
+      { label: '高雄17直播鋼鐵人', url: '/steelers' }
     ],
     ItemsImg: ['src/assets/img/bunbun.png', 'src/assets/img/kings.png', 'src/assets/img/monkey.png', 'src/assets/img/lion.png', 'src/assets/img/dream.png', 'src/assets/img/17.png'],
     ItemsText: ['簡介、主場、售票資訊']

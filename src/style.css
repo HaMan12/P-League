@@ -6,7 +6,10 @@
 .title-style{
   @apply bg-[#24292D] text-2xl text-center text-white py-3 font-title font-extrabold tracking-wider lg:text-[40px] lg:py-10
 }
-
+/* 球隊--名稱 */
+.team-text{
+  @apply mt-4 text-2xl font-black text-black tracking-widest
+}
 [v-cloak]{
   display: none;
 }
@@ -24,18 +27,14 @@ html,body{
     align-items: center;
 }
 
-.list-enter-active,
-.list-leave-active {
-  transition: all 0.5s ease;
+.list-enter-active{
+  transition: all 0.5s ease-in-out;
 }
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateX(30px);
 }
-.list-leave-to {
-  opacity: 0;
-}
+
 .swiper-pagination-clickable .swiper-pagination-bullet{
   background-color: azure;
   width: 6px;
