@@ -7,6 +7,7 @@ const options =ref({});
 onMounted(() => {
     emitter.on('openModal', (data) => {
     options.value = data;
+    console.log(options.value)
   });
 })
 const closeModal =()=>{
@@ -23,7 +24,7 @@ const sendCarData = () => {
 <template v-cloak >
     <Transition>
         <div class="modal-outer" v-if="options.isOpen">
-            <div class="modal">
+            <div class="modal" :style="{ 'top': options.isTeam ? '50%' : '30%' }">
                 <div class="modal-header">
                   <h3 class="text-center text-2xl font-bold">{{ options.title }}</h3>
                     <button class="absolute right-5 top-1/2 translate-y-[-50%]" v-on:click="closeModal()">
@@ -42,6 +43,9 @@ const sendCarData = () => {
                             加入購物車
                          </button>
                       </div>
+                   </div>
+                   <div class="center" v-if="options.isTeam">
+                      <img :src="options.imgUrls" :style="{ 'width': options.title==='鋼鐵人資訊' ? '600px' : '800px' }">
                    </div>
                 </div>
             </div>

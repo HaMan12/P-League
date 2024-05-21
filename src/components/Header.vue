@@ -92,7 +92,7 @@ const toggleOn = (index) => {
 const isScrolled = ref(false);
 const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      isScrolled.value = scrollTop >= 100;
+      isScrolled.value = scrollTop >= 300;
     };
     onMounted(() => {
       window.addEventListener('scroll', handleScroll);
