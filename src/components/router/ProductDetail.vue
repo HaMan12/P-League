@@ -5,7 +5,16 @@ import Modals from '../modal.vue';
 import emitter from '../../mitt/mitt.js';
 
 const { shopData } = useProductStore();
-const props = defineProps(['productId']);
+const props = defineProps({
+  productName: {
+    type: String,
+    required: true
+  },
+  productId: {
+    type: String,
+    required: true
+  }
+});
 
 let rawshopDetail = null;
 

@@ -119,7 +119,7 @@ const router = createRouter({
     },
     // 商品細項
     {
-      path: '/:productId',
+      path: '/:productName/id=:productId',
       name: 'ProductDetail',
       component: () => import('./components/router/ProductDetail.vue'),
       props:true

@@ -3,11 +3,11 @@ import { ref,onMounted } from 'vue';
 const menuItems = ref([
   { 
     label: '賽程 / 比分', 
-    url: 'schedule' 
+    url: '/schedule' 
   },
   { 
     label: '戰績', 
-    url: 'record' 
+    url: '/record' 
   },
   { 
     label: '數據', 
@@ -46,7 +46,7 @@ const menuItems = ref([
     label: '關於', 
     url: '#',
     subMenuItems: [
-      { label: '聯盟', url: 'about' },
+      { label: '聯盟', url: '/about' },
     ]
   },
   { 
@@ -63,7 +63,7 @@ const menuItems = ref([
   },
   { 
     label: '商品',
-    url: 'commodity' 
+    url: '/commodity' 
   }
 ]);
 //展示pc選單

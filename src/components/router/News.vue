@@ -5,7 +5,7 @@ import { ref , watch  } from 'vue'
 
 <template>
     <section>
-        <h3 class="title-style"></h3>
+        <h3 class="title-style">NEWS</h3>
     </section>
 </template>
 

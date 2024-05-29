@@ -7,7 +7,7 @@ export const useProductStore = defineStore('product', {
     state: () => ({
       shopData:     [
         {
-            id:1,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1_131_1684139901.png',
             name:'XAP x P.-LEAGUE+-吊卡收藏玩具',
             NTD:'4800',
@@ -16,7 +16,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: false
         },
         {
-            id:2,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1_205_1711334974.jpg',
             name:'黑潮寬肩棉質背心｜黑 ',
             NTD:'980',
@@ -25,7 +25,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: true
         },
         {
-            id:3,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1_178_1684911171.jpg',
             name:'PLG經典款折疊功能包',
             NTD:'980',
@@ -34,7 +34,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: false
         },
         {
-            id:4,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1638755951.jpg',
             name:'PLG2.0大P數碼Tee',
             NTD:'780',
@@ -43,7 +43,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: true
         },
         {
-            id:5,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1671592957.jpg',
             name:'Oh my PLG主題短Tee(黑)',
             NTD:'880',
@@ -52,7 +52,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: true
         },
         {
-            id:6,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1610978482.jpg',
             name:'PLUS 專業運動襪 PRO SOCKS',
             NTD:'280',
@@ -61,7 +61,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: true
         },
         {
-            id:7,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1671593239.jpg',
             name:'Oh my PLG主題短Tee(粉)',
             NTD:'980',
@@ -70,7 +70,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: true
         },
         {
-            id:8,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1649943103.jpg',
             name:'P+BLACK LABEL 漁夫帽(軍綠)',
             NTD:'980',
@@ -79,7 +79,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: false
         },
         {
-            id:9,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1711334694.jpg',
             name:'黑潮環繞文字女款短版Tee｜水洗黑',
             NTD:'880',
@@ -88,7 +88,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: true
         },
         {
-            id:10,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1638759703.jpg',
             name:'PLG2.0 8-bit大圖托特包',
             NTD:'580',
@@ -97,7 +97,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: false
         },
         {
-            id:11,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1638757156.jpg',
             name:'黑潮寬肩棉質背心｜黑 ',
             NTD:'880',
@@ -106,7 +106,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: true
         },
         {
-            id:12,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1672988614.jpg',
             name:'大P城市Tee (白)',
             NTD:'580',
@@ -115,7 +115,7 @@ export const useProductStore = defineStore('product', {
             isTshirt: false
         },
         {
-            id:13,
+            id:crypto.randomUUID(),
             imgUrl:'https://d36fypkbmmogz6.cloudfront.net/upload/products/photo1__1671591992.jpg',
             name:'Oh my PLG主題毛巾',
             NTD:'380',

@@ -7,7 +7,6 @@ const options =ref({});
 onMounted(() => {
     emitter.on('openModal', (data) => {
     options.value = data;
-    console.log(options.value)
   });
 })
 const closeModal =()=>{

@@ -54,6 +54,13 @@ const selectlike = (idx) =>{
     like.value = idx;
     shopData[idx].isLiked = !shopData[idx].isLiked;
 }
+// 修改Url
+const sanitizeProductName = (name)=>{
+    return name
+      .replace(/[^\w\s\u4e00-\u9fa5-]/g, '')  
+      .replace(/\s+/g, '-')                 
+      .toLowerCase();
+}
 </script>
 
 <template>
@@ -74,7 +81,7 @@ const selectlike = (idx) =>{
             <div class="flex flex-wrap">
                 <div class="w-1/2 | md:w-1/4" v-for="(product , index) in currentPageData" :key="product.id">
                  <div class="card-product text-black font-bold">
-                    <router-link :to="{ name: 'ProductDetail', params: { productId: product.id }}">
+                    <router-link :to="{ name: 'ProductDetail', params: { productId: product.id , productName: sanitizeProductName(product.name)}}">
                         <img :src="product.imgUrl" alt="">
                     </router-link>
                     <div class="flex justify-between px-2 py-3 | md:px-5">
@@ -90,7 +97,7 @@ const selectlike = (idx) =>{
                         </div>
                     </div>
                     <div class="text-center text-white bg-black mx-3 my-5 opacity-0">
-                        <router-link :to="{ name: 'ProductDetail', params: { productId: product.id }}" class="inline-block w-full py-2">
+                        <router-link :to="{ name: 'ProductDetail', params: { productId: product.id , productName:sanitizeProductName(product.name)}}" class="inline-block w-full py-2">
                             前往購買
                          </router-link>
                     </div>
