@@ -119,7 +119,6 @@ const sanitizeProductName = (name)=>{
 	}
 }
 .card-product{
-   transition: all .15s ease-in-out;
    display: flex;
    flex-direction: column;
    background-color: #fff;
