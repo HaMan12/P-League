@@ -202,6 +202,24 @@ const router = createRouter({
         title: '登入 | P.LEAGUE+'
       },
     },
+    // 註冊
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('./components/router/register.vue'),
+      meta: {
+        title: '註冊 | P.LEAGUE+'
+      },
+    },
+    // 登入成功 (帳號設定)
+    {
+      path: '/SuccessLogin',
+      name: 'SuccessLogin',
+      component: () => import('./components/router/SuccessLogin.vue'),
+      meta: {
+        title: '帳號設定 | P.LEAGUE+'
+      },
+    },
   ]
 });
 

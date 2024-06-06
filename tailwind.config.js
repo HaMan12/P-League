@@ -14,7 +14,10 @@ export default {
         mainTitle: '#373f50',
         bottomBorder: '#ccc', 
         active:'#BB986C',
-        red:'red'
+        red:'red',
+        muted:'#7d879c',
+        success:'#02C874',
+        error:'#CE0000'
       },
       fontFamily: {
         'title': ['worker', 'serif']

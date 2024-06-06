@@ -28,18 +28,10 @@ const mixinSubmit = (value, bool) => {
     };
 const submit = ()=>{
 	mixinSubmit(username.value, isUsername);
-	if (password.value === null || password.value === '') {
-        isPassword.value = true;
-      } else {
-        isPassword.value = false;
-      }
+	mixinSubmit(password.value, isPassword);
 }
 watch(username, (newValue, oldValue) =>{
-	if (newValue !== null && isNaN(newValue)) { 
-    	isUsername.value = true;
-  	} else {
-    	isUsername.value = false;
-  	}
+    mixinSubmit(newValue, isUsername);
 })
 watch(password, (newValue, oldValue) =>{
 	mixinSubmit(newValue, isPassword);
@@ -82,7 +74,7 @@ watch(password, (newValue, oldValue) =>{
 					</p>
 					<div class="center flex-col" style="margin-top: 86px;">
 						<img src="../../assets/img/title-promo.png" class="block text-center">
-						<button type="submit" class="w-full text-center bg-active py-3 block ease-in duration-300 hover:bg-[#8e6f4d]">立即加入 ></button>
+						<a href="/register"  class="w-full text-center bg-active py-3 block ease-in duration-300 hover:bg-[#8e6f4d]">立即加入 ></a>
 					</div>
 				</div>
 			</div>

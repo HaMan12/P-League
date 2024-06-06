@@ -6,11 +6,8 @@ import 'swiper/css/bundle';
 
 // 戰機排行
 const { loading, record, fetchRecord } = useRecordStore();
-onMounted(async ()=>{
-  await fetchRecord();
-})
 
-onMounted(() => {
+onMounted(async() => {
   const mySwiper = new Swiper('.mySwiper', {
     loop:true,
     slidesPerView: 1,
@@ -38,6 +35,7 @@ onMounted(() => {
     },
   },
     });
+  await fetchRecord();
 });
 // 例行賽 賽程
 const gameWeek = reactive([
@@ -230,16 +228,22 @@ const gameWeek = reactive([
   <section>
     <div class="swiper mySwiper">
     <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide"><img src="../../assets/banner/banner2.jpg" title="shop" height="1070">
+        <div class="text-sm absolute left-[20%] -bottom-8 font-black flex gap-3 | md:text-xl md:-bottom-52 md:left-[40%]">
+          <p class="pt-1">#PLG 2024 總冠軍賽</p>
+          <router-link to="/schedule" class="more  text-sm | md:text-xl"><span class="inline-block">了解更多</span></router-link>
+        </div>
+      </div>
       <div class="swiper-slide banner-slide"><img src="../../assets/banner/banner.jpg" title="shop">
         <div class="text-sm absolute left-[20%] -bottom-8 font-black flex gap-3 | md:text-xl md:-bottom-52 md:left-[40%]">
           <p class="pt-1">#黑潮來襲！全新系列低調上市！</p>
-          <router-link to="#" class="more  text-sm | md:text-xl"><span class="inline-block">了解更多</span></router-link>
+          <router-link to="/commodity" class="more  text-sm | md:text-xl"><span class="inline-block">了解更多</span></router-link>
         </div>
       </div>
       <div class="swiper-slide banner-slide"><img src="../../assets/banner/banner1.png" title="shop" height="824">
         <div class="absolute bottom-6 left-[20%]  font-black text-sm flex gap-3 | md:bottom-10 md:text-xl md:left-[40%]">
           <p class="pt-1">#唯有籃球，才是一切的答案</p>
-          <router-link to="#" class="more text-sm | md:text-xl"><span class="inline-block">了解更多</span></router-link>
+          <router-link to="/record" class="more text-sm | md:text-xl"><span class="inline-block">了解更多</span></router-link>
         </div>
       </div>
     </div>
