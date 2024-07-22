@@ -215,9 +215,18 @@ const router = createRouter({
     {
       path: '/SuccessLogin',
       name: 'SuccessLogin',
-      component: () => import('./components/router/SuccessLogin.vue'),
+      component: () => import('./components/router/setting/SuccessLogin.vue'),
       meta: {
-        title: '帳號設定 | P.LEAGUE+'
+        title: '我的帳號設定 | P.LEAGUE+'
+      },
+    },
+    // 登入成功 (商品收藏)
+    {
+      path: '/favorite-product',
+      name: 'favorite-product',
+      component: () => import('./components/router/setting/favorite-product.vue'),
+      meta: {
+        title: '我的帳號設定 | P.LEAGUE+'
       },
     },
   ]

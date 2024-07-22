@@ -17,11 +17,16 @@ export default {
         red:'red',
         muted:'#7d879c',
         success:'#02C874',
-        error:'#CE0000'
+        error:'#CE0000',
+        border:'#dae1e7',
       },
       fontFamily: {
         'title': ['worker', 'serif']
-      }
+      },
+      borderRadius: {
+        '5':'0.3125rem',
+        '10': '0.625rem'
+      },
     },
   },
   plugins: [],

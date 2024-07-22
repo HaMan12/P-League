@@ -66,6 +66,9 @@ const sanitizeProductName = (name)=>{
 <template>
     <section>
         <h3 class="title-style">P.LEAGUE+ SHOP</h3>
+        <div>
+            <img src="../../assets/banner/shop-banner.jpg" class="w-full">
+        </div>
         <div class="max-w-1280 mx-auto py-4">
             <ul class="center">
                 <li class="bg-active text-white px-4 py-2 text-sm font-bold cursor-pointer | md:px-5 md:text-base">所有商品</li>
