@@ -1,1 +1,0 @@
-import{v as t}from"./index-hp-71n84.js";const e=t({id:"rakind",state:()=>({rakindData:[{title:"綜合排行",Url:"/raking"},{title:"特殊表現",Url:"/performance"},{title:"球隊數據",Url:"/team"},{title:"TEAM CHART",Url:"/chart"}]})});export{e as u};
