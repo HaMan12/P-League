@@ -1,5 +1,7 @@
 # Vue 3 + Vite + Tailwind + Axios 打造籃球官網
 
+[點擊此處查看網站](https://haman12.github.io/P-League/#/Home)
+
 歡迎來到這裡 ， 這是一個模仿台灣職業籃球P-League官網。
 前端技術線除了上述標題還包括 Scss + Pinia
 後端使用node.js的Express.js開發Api
