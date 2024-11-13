@@ -1,5 +1,12 @@
 <script setup>
 import { ref,onMounted } from 'vue';
+import kingImage from '/src/assets/img/kings.png';
+import DreamImage from '/src/assets/img/dream.png';
+import lionImage from '/src/assets/img/lion.png';
+import UHImage from '/src/assets/img/17.png';
+import MonkeyImage from '/src/assets/img/monkey.png';
+import bunbunImage from '/src/assets/img/bunbun.png';
+
 const menuItems = ref([
   { 
     label: '賽程 / 比分', 
@@ -13,40 +20,40 @@ const menuItems = ref([
     label: '數據', 
     url: '#',
     subMenuItems: [
-      { label: '綜合排行', url: '/raking' },
-      { label: '特殊表現', url: '/performance' },
-      { label: '球隊數據', url: '/team' },
-      { label: 'TEAM CHART', url: '/chart' }
+      { label: '綜合排行', url: '#/raking' },
+      { label: '特殊表現', url: '#/performance' },
+      { label: '球隊數據', url: '#/team' },
+      { label: 'TEAM CHART', url: '#/chart' }
     ]
   },
   { 
     label: '消息', 
     url: '#',
     subMenuItems: [
-      { label: '新聞總攬', url: '/news' },
-      { label: '照片圖輯', url: '/album' },
-      { label: '精彩影音', url: '/video' }
+      { label: '新聞總攬', url: '#/news' },
+      { label: '照片圖輯', url: '#/album' },
+      { label: '精彩影音', url: '#/video' }
     ]
   },
   { 
     label: '球隊',    
     url: '#',
     subMenuItems: [
-      { label: '台北富邦勇士', url: '/fubonbraves' },
-      { label: '新北國王', url: '/newtaipeikings' },
-      { label: '桃園璞園領航猿', url: '/pilots' },
-      { label: '新竹御頂攻城獅', url: '/lioneers' },
-      { label: '福爾摩沙夢想家', url: '/formosadreamers' },
-      { label: '高雄17直播鋼鐵人', url: '/steelers' }
+      { label: '台北富邦勇士', url: '#/fubonbraves' },
+      { label: '新北國王', url: '#/newtaipeikings' },
+      { label: '桃園璞園領航猿', url: '#/pilots' },
+      { label: '新竹御頂攻城獅', url: '#/lioneers' },
+      { label: '福爾摩沙夢想家', url: '#/formosadreamers' },
+      { label: '高雄17直播鋼鐵人', url: '#/steelers' }
     ],
-    ItemsImg: ['src/assets/img/bunbun.png', 'src/assets/img/kings.png', 'src/assets/img/monkey.png', 'src/assets/img/lion.png', 'src/assets/img/dream.png', 'src/assets/img/17.png'],
+    ItemsImg: [bunbunImage, kingImage, MonkeyImage, lionImage, DreamImage, UHImage],
     ItemsText: ['簡介、主場、售票資訊']
   },
   { 
     label: '關於', 
     url: '#',
     subMenuItems: [
-      { label: '聯盟', url: '/about' },
+      { label: '聯盟', url: '#/about' },
     ]
   },
   { 
@@ -114,7 +121,7 @@ const handleScroll = () => {
       </div>
       <div class="flex mt-3 ml-3 relative z-50">
           <div class="mr-10">
-            <a href="/Home">
+            <a href="/P-League/#/Home">
               <img src="../assets/icon/pleague_logo.png" alt="p+logo" class="relative w-[50px] | md:bottom-5 md:w-[80px]">
            </a>
           </div>

@@ -74,7 +74,7 @@ watch(password, (newValue, oldValue) =>{
 					</p>
 					<div class="center flex-col" style="margin-top: 86px;">
 						<img src="../../assets/img/title-promo.png" class="block text-center">
-						<a href="/register"  class="w-full text-center bg-active py-3 block ease-in duration-300 hover:bg-[#8e6f4d]">立即加入 ></a>
+						<a href="#/register"  class="w-full text-center bg-active py-3 block ease-in duration-300 hover:bg-[#8e6f4d]">立即加入 ></a>
 					</div>
 				</div>
 			</div>

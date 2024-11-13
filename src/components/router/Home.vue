@@ -3,6 +3,13 @@ import { onMounted, reactive, } from 'vue';
 import Swiper from 'swiper/bundle';
 import { useRecordStore } from '../../store/record.js';
 import 'swiper/css/bundle';
+import kingImage from '/src/assets/img/kings.png';
+import DreamImage from '/src/assets/img/dream.png';
+import lionImage from '/src/assets/img/lion.png';
+import UHImage from '/src/assets/img/17.png';
+import MonkeyImage from '/src/assets/img/monkey.png';
+import bunbunImage from '/src/assets/img/bunbun.png';
+import BgIndex from '/src/assets/img/bg-index.png';
 
 // 戰機排行
 const { loading, record, fetchRecord } = useRecordStore();
@@ -45,8 +52,8 @@ const gameWeek = reactive([
       {
         match: 'G90',
         date: '04/13 (六)',
-        imageUrl1: '../../src/assets/img/kings.png',
-        imageUrl2: '../../src/assets/img/dream.png',
+        imageUrl1: kingImage,
+        imageUrl2: DreamImage,
         teamName1: '國王',
         teamName2: '夢想家',
         score1: 116,
@@ -55,8 +62,8 @@ const gameWeek = reactive([
       {
         match: 'G91',
         date: '04/13 (六)',
-        imageUrl1: '../../src/assets/img/lion.png',
-        imageUrl2: '../../src/assets/img/17.png',
+        imageUrl1: lionImage,
+        imageUrl2: UHImage,
         teamName1: '攻城獅',
         teamName2: '鋼鐵人',
         score1: 116,
@@ -65,8 +72,8 @@ const gameWeek = reactive([
       {
         match: 'G92',
         date: '04/14 (日)',
-        imageUrl1: '../../src/assets/img/monkey.png',
-        imageUrl2: '../../src/assets/img/dream.png',
+        imageUrl1: MonkeyImage,
+        imageUrl2: DreamImage,
         teamName1: '領航猿',
         teamName2: '夢想家',
         score1: 80,
@@ -75,8 +82,8 @@ const gameWeek = reactive([
       {
         match: 'G93',
         date: '04/14(日)',
-        imageUrl1: '../../src/assets/img/bunbun.png',
-        imageUrl2: '../../src/assets/img/17.png',
+        imageUrl1: bunbunImage,
+        imageUrl2: UHImage,
         teamName1: '勇士',
         teamName2: '鋼鐵人',
         score1: 98,
@@ -90,8 +97,8 @@ const gameWeek = reactive([
     {
         match: 'G94',
         date: '04/19 (五)',
-        imageUrl1: '../../src/assets/img/kings.png',
-        imageUrl2: '../../src/assets/img/dream.png',
+        imageUrl1: kingImage,
+        imageUrl2: DreamImage,
         teamName1: '國王',
         teamName2: '夢想家',
         score1: '16-14',
@@ -100,8 +107,8 @@ const gameWeek = reactive([
       {
         match: 'G95',
         date: '04/20 (六)',
-        imageUrl1: '../../src/assets/img/bunbun.png',
-        imageUrl2: '../../src/assets/img/17.png',
+        imageUrl1: bunbunImage,
+        imageUrl2: UHImage,
         teamName1: '勇士',
         teamName2: '鋼鐵人',
         score1: '14-17',
@@ -110,8 +117,8 @@ const gameWeek = reactive([
       {
         match: 'G96',
         date: '04/21 (日)',
-        imageUrl1: '../../src/assets/img/monkey.png',
-        imageUrl2: '../../src/assets/img/lion.png',
+        imageUrl1: MonkeyImage,
+        imageUrl2: lionImage,
         teamName1: '領航猿',
         teamName2: '攻城獅',
         score1: '20-12',
@@ -120,8 +127,8 @@ const gameWeek = reactive([
       {
         match: 'G97',
         date: '04/21 (日)',
-        imageUrl1: '../../src/assets/img/dream.png',
-        imageUrl2: '../../src/assets/img/17.png',
+        imageUrl1: DreamImage,
+        imageUrl2: UHImage,
         teamName1: '夢想家',
         teamName2: '鋼鐵人',
         score1: '20-12',
@@ -135,8 +142,8 @@ const gameWeek = reactive([
     {
         match: 'G98',
         date: '04/27 (六)',
-        imageUrl1: '../../src/assets/img/lion.png',
-        imageUrl2: '../../src/assets/img/dream.png',
+        imageUrl1: lionImage,
+        imageUrl2: DreamImage,
         teamName1: '攻城獅',
         teamName2: '夢想家',
         score1: '16-13',
@@ -145,8 +152,8 @@ const gameWeek = reactive([
       {
         match: 'G99',
         date: '04/27 (六)',
-        imageUrl1: '../../src/assets/img/bunbun.png',
-        imageUrl2: '../../src/assets/img/kings.png',
+        imageUrl1: bunbunImage,
+        imageUrl2: kingImage,
         teamName1: '勇士',
         teamName2: '國王',
         score1: '14-17',
@@ -155,8 +162,8 @@ const gameWeek = reactive([
       {
         match: 'G100',
         date: '04/28 (日)',
-        imageUrl1: '../../src/assets/img/17.png',
-        imageUrl2: '../../src/assets/img/dream.png',
+        imageUrl1: UHImage,
+        imageUrl2: DreamImage,
         teamName1: '鋼鐵人',
         teamName2: '夢想家',
         score1: '7-25',
@@ -165,8 +172,8 @@ const gameWeek = reactive([
       {
         match: 'G101',
         date: '04/28 (日)',
-        imageUrl1: '../../src/assets/img/monkey.png',
-        imageUrl2: '../../src/assets/img/kings.png',
+        imageUrl1: MonkeyImage,
+        imageUrl2: kingImage,
         teamName1: '領航員',
         teamName2: '國王',
         score1: '20-12',
@@ -251,7 +258,7 @@ const gameWeek = reactive([
     </div>
   </section>
   <section>
-    <div class="bg-[url('../../src/assets/img/bg-index.png')] bg-no-repeat">
+    <div class="bg-no-repeat" style="background-image: url(BgIndex);">
       <div class="max-w-1280 mx-auto pt-20 lg:py-32">
         <h2 class="text-center text-white font-bold text-base | md:text-2xl">STANDINGS & RANKINGS
           <span class="text-base pl-2">/ 例行賽 /</span>

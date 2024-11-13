@@ -1,6 +1,12 @@
 <script setup>
 import { ref , onMounted} from 'vue'
 import { useRecordStore } from '../../store/record.js';
+import kingImage from '/src/assets/img/kings.png';
+import DreamImage from '/src/assets/img/dream.png';
+import lionImage from '/src/assets/img/lion.png';
+import UHImage from '/src/assets/img/17.png';
+import MonkeyImage from '/src/assets/img/monkey.png';
+import bunbunImage from '/src/assets/img/bunbun.png';
 
 const { loading, record, fetchRecord } = useRecordStore();
 onMounted(()=>{

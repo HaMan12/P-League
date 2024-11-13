@@ -3,7 +3,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory('/P-League/'),
   routes: [
     {
       path: '/',
